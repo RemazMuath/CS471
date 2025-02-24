@@ -1,0 +1,33 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% block title %} About us {% endblock title %}
+{% block content %}
+
+
+<h1>List of Books</h1>
+
+<!-- Book 1 -->
+<a href="{% url 'books.one_book' bookId=1 %}">
+    <h2>1) Internet & World Wide Web How to Program</h2>
+</a>
+
+<a href="{% url 'books.one_book' bookId=1 %}">
+    <img src="{% static 'Book1.jpg' %}" alt="Book1 img desc" width="200" height="200">
+</a>
+
+<hr>
+
+<!-- Book 2 -->
+<h2>2) C++ How to Program, Late Objects Version</h2>
+<img src="{% static 'Book2.jpg' %}" alt="Book2 img desc" width="200" height="200">
+
+<hr>
+
+<!-- Book 3 -->
+<h2>3) Images in Another Folder</h2>
+<img src="{% static 'Book3.jpg' %}" alt="Book3 img desc" width="200" height="200">
+
+<hr>
+
+
+{% endblock content %}

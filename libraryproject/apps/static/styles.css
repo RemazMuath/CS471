@@ -1,0 +1,19 @@
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #eeeeee;
+    width: 100%;
+  }
+/* Style the links inside the navigation bar */
+.topnav a {
+    color: #000000;
+    text-align: center;
+    margin-right: 25px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+   
+  /* Add a color to the active/current link */
+  .topnav a.active{
+    color: #008CBA;
+  }
+    
