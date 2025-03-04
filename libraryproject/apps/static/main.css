@@ -1,0 +1,108 @@
+body {
+    text-align: center;
+    padding: 20px;
+}
+
+/* . for class */
+.link-container {
+    padding: 20px;
+}
+
+/* # for id */
+#green-box {
+    background: lightgreen;
+}
+
+#gray-box {
+    background: gray;
+}
+
+#black-box {
+    background: black;
+}
+
+/* Link font (a) color */
+#green-box a {
+    color: red;
+}
+
+#gray-box a {
+    color: yellow;
+}
+
+#black-box a {
+    color: white;
+}
+
+/* states */
+#green-box a:visited,
+#gray-box a:visited,
+#black-box a:visited {
+    color: green;
+}
+
+#gray-box a:hover,
+#green-box a:hover,
+#black-box a:hover {
+    color: rgb(200, 28, 134);
+}
+
+#black-box a:active,
+#green-box a:active,
+#gray-box a:active {
+    color: darkorange;
+}
+
+#tag-format {
+    color: green;
+    background-color: rgb(252, 252, 201);
+    font-weight: bold;
+    text-align: left;
+    padding: 10px;
+}
+
+.p_formats {
+    text-align: left;
+}
+
+/* lists */
+#tag-format2 {
+    color: white;
+    background-color: rgb(68, 158, 168);
+    font-weight: bold;
+    text-align: left;
+    padding: 10px;
+}
+
+.list1 {
+    direction: ltr;
+    text-align: left;
+}
+
+/* tables */
+.table1, .table2{
+    border-collapse: collapse;    
+    margin: auto; 
+    text-align: center; 
+}
+.table1,.table1 td, .table1 th{
+    border: 3px double black;    
+}
+#total{
+    font-weight: bolder;
+}
+/* table2 */
+.table2,.table2 td{
+    border: 1px solid black; 
+    width: auto; 
+}
+
+.table2 th{
+    border: 1px solid black;  
+    padding: 10px;
+}
+#img1{
+    width: 200px;
+    height: 150px;
+}
+

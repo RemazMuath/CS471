@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Format Page</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}" />
+  </head>
+  <body>
+    {% comment %}table one{% endcomment %}
+    <table class="table1">
+      <caption>Table 1: Table of Fruits and Their Prices</caption>
+      <tr>
+        <th>Fruit</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td>Apple</td>
+        <td>$0.25</td>
+      </tr>
+
+      <tr>
+        <td>Orange</td>
+        <td>$0.50</td>
+      </tr>
+
+      <tr>
+        <td>Banana</td>
+        <td>$1.00</td>
+      </tr>
+
+      <tr>
+        <td>Pineapple</td>
+        <td>$2.00</td>
+      </tr>
+
+      <tr id="total">
+        <td>Total</td>
+        <td>$3.75</td>
+      </tr>
+    </table>
+    <br />
+    {% comment %}table 2{% endcomment %}
+    <table class="table2">
+      <caption>Table 2: A more complex sample table</caption>
+      {% comment %}row1{% endcomment %}
+      <tr>
+        <td rowspan="2">
+          <img src="http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQaeLHqP2iGtwoV1mABu_C4gUcQMCqf-EhJh93KLNLxK8mXTqd9M2GX9QXEnNnqf1hq9KW6uvmKVX45TSZn_rY" id="img1" />
+        </td>
+        <th colspan="4">
+          Camelid comparison<br />Approximate as of 6/2011
+        </th>
+      </tr>
+      {% comment %}row2{% endcomment %}
+      <tr>
+        <th># of humps</th>
+        <th>Indigenous region</th>
+        <th>Spits?</th>
+        <th>Produces wool?</th>
+      </tr>
+      {% comment %}row 3{% endcomment %}
+      <tr>
+        <td>
+          <b>Dromedary</b>
+        </td>
+        <td>1</td>
+        <td>Arabian Peninsula</td>
+        <td>Yes</td>
+        <td>Yes</td>
+      </tr>
+      {% comment %}row 4{% endcomment %}
+      <tr>
+        <td>
+          <b>Camels (bactrian)</b>
+        </td>
+        <td>2</td>
+        <td>Africa/Asia</td>
+        <td>Yes</td>
+        <td>Yes</td>
+      </tr>
+      {% comment %}row 5{% endcomment %}
+      <tr>
+        <td>
+          <b>Llamas</b>
+        </td>
+        <td>1</td>
+        <td>Andes Mountains</td>
+        <td>Yes</td>
+        <td>Yes</td>
+      </tr>
+    </table>
+  </body>
+</html>
