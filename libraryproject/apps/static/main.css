@@ -86,7 +86,9 @@ body {
     text-align: center; 
 }
 .table1,.table1 td, .table1 th{
-    border: 3px double black;    
+    border: 1px solid black;    
+    border-collapse: separate;    
+
 }
 #total{
     font-weight: bolder;
