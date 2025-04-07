@@ -1,0 +1,16 @@
+{% extends 'layouts/base.html' %}
+{% block title %}
+  Lab 8 - Task 1
+{% endblock %}
+
+{% block content %}
+  <h1>Books with Price ≤ 80</h1>
+
+  {% if books %}
+    {% for book in books %}
+      <p>{{ forloop.counter }}) {{ book.title }} - {{ book.price }}</p>
+    {% endfor %}
+  {% else %}
+    <p>No books found matching the criteria.</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,7 @@
+<h1>Number of Students in Each City</h1>
+
+{% for city in cities %}
+  <p>{{ forloop.counter }}) City: {{ city.city }} | Students: {{ city.student_count }}</p>
+{% empty %}
+  <p>No cities found.</p>
+{% endfor %}

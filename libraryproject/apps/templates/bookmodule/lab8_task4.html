@@ -1,0 +1,14 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %}
+  Lab 8 - Task 4
+{% endblock %}
+
+{% block content %}
+  <h1>Books Ordered by Title</h1>
+  {% for book in books %}
+    <p>{{ forloop.counter }}) {{ book.title }} - {{ book.price }}</p>
+  {% empty %}
+    <p>No books available.</p>
+  {% endfor %}
+{% endblock %}
