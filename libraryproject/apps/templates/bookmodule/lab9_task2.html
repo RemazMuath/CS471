@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task 2 - Courses</title>
+  </head>
+  <body>
+    <h1>Courses and Registered Students</h1>
+    <ul>
+      {% for course in courses %}
+        <li>{{ course.course_title }} - {{ course.student_count }} students</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

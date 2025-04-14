@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Book
 from django.db.models import Q ,Count, Sum, Avg, Max, Min
-
+#be carefull here it should be apps.usermodule first 
+from apps.usermodule.models import *
 
 # def index(request):
 #     return HttpResponse("Hello, world!")
@@ -117,3 +118,61 @@ def lab8_task5(request):
         min_price=Min('price')
     )
    return render(request, 'bookmodule/lab8_task5.html', {'a': a})
+
+#lab9
+def lab9_task1(request):
+    departments = Department.objects.all()  # Capital D
+
+    dep_data = []
+    for dep in departments:
+        count = dep.student2_set.count() # One-to-Many relation
+        dep_data.append({
+            'department_name': dep.name,
+            'student_count': count,
+        })
+
+    return render(request, 'bookmodule/lab9_task1.html', {'departments': dep_data})
+
+
+def lab9_task2(request):
+    course = Course.objects.all()
+
+    course_data = []
+    for course in course:
+        count = course.student2_set.count() 
+        course_data.append({
+            'course_title': course.title,
+            'student_count': count,
+        })
+
+    return render(request, 'bookmodule/lab9_task2.html', {'courses': course_data})
+
+
+def lab9_task3(request):
+    departments = Department.objects.all()
+
+    dep_data = []
+    for dep in departments:
+        # name of the oldest student (by ID) For each department 
+        oldest_student = dep.student2_set.order_by('id').first()
+        if oldest_student:
+            student_name = oldest_student.name
+        else:#in case theres no student
+            student_name = "No students in this department"
+
+        dep_data.append({
+            'department_name': dep.name,
+            'oldest_student_name': student_name,
+        })
+
+    return render(request, 'bookmodule/lab9_task3.html', {'departments': dep_data})
+
+def lab9_task4(request):
+    departments = (
+    Department.objects
+    .annotate(student_count=Count('student2'))  # count the students
+    .filter(student_count__gt=2)               # dep with greater than 2 student
+    .order_by('-student_count')                # - is for the des and without is by default ascending..
+     )
+
+    return render(request, 'bookmodule/lab9_task4.html', {'departments': departments})

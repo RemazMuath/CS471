@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 3 - Oldest Student</title>
+</head>
+<body>
+    <h1>Oldest Student per Department</h1>
+    <ul>
+        {% for dep in departments %}
+            <li>{{ dep.department_name }} - Oldest Student: {{ dep.oldest_student_name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
