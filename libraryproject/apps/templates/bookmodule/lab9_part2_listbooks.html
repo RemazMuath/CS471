@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Book List</title>
+  </head>
+  <body>
+    {% csrf_token %}
+    <h1>Book List</h1>
+    <a href="{% url 'lab9_part2_addbook' %}">Add New Book</a>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Actions</th>
+      </tr>
+      {% for book in books %}
+        <tr>
+          <td>{{ book.title }}</td>
+          <td>{{ book.author }}</td>
+          <td>
+            <a href="{% url 'lab9_part2_editbook' book.id %}">Edit</a>
+            <form action="{% url 'lab9_part2_deletebook' book.id %}" method="post" style="display:inline;">
+              <a href="{% url 'lab9_part1_deletebook' book.id %}">Delete</a>
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

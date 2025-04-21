@@ -1,0 +1,10 @@
+<h1>Add New Book</h1>
+<form method="post">
+  {% csrf_token %}
+  <label>Title:</label>
+  <input type="text" name="title" required><br>
+  <label>Author:</label>
+  <input type="text" name="author" required><br>
+  <!-- Add other fields as necessary -->
+  <button type="submit">Add Book</button>
+</form>
