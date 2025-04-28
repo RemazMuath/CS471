@@ -1,0 +1,16 @@
+<h1>Uploaded Photos</h1>
+
+<!-- Add Photo Button -->
+<form action="{% url 'upload_photo' %}" method="get" style="margin-bottom: 20px;">
+  <button type="submit">Add Photo</button>
+</form>
+
+<!-- List all uploaded photos -->
+{% for photo in photos %}
+  <div style="margin-bottom: 20px;">
+    <h3>{{ photo.title }}</h3>
+    <img src="{{ photo.image.url }}" width="200" />
+  </div>
+{% empty %}
+  <p>No photos uploaded yet.</p>
+{% endfor %}

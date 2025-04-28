@@ -1,0 +1,8 @@
+<h1>Upload a New Photo</h1>
+
+{% comment %} said Add enctype="multipart/form-data" in <form>, or image upload will NOT work {% endcomment %}
+<form method="post" enctype="multipart/form-data">  
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Upload</button>
+</form>

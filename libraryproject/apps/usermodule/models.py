@@ -5,6 +5,8 @@ from django.db import models
 # Address model
 class Address(models.Model):
     city = models.CharField(max_length=100)
+    def __str__(self):
+        return self.city
 
 
 # Student model
@@ -37,4 +39,30 @@ class Student2(models.Model):
     course = models.ManyToManyField(Course)#so many student have many cources MANY TO MANY    
     
     
+#lab 11 task2 
+# Address model 2
+class Address2(models.Model):
+    city = models.CharField(max_length=100)
+    def __str__(self):
+        return self.city
+
+
+# Student model
+class Student22(models.Model):
+    name = models.CharField(max_length=100)
+    age = models.IntegerField(default=20)
+    addresses = models.ManyToManyField(Address2)  # Many-to-Many here is the diffrence !!
+    def __str__(self):
+        return self.name
     
+
+#python manage.py makemigrations
+#python manage.py migrate
+
+#task 3
+class Photos(models.Model):
+    title = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='photos/')
+
+    def __str__(self):
+        return self.title

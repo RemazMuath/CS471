@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Delete Student2</title>
+  </head>
+  <body>
+    <h1>Delete Student</h1>
+    <p>Are you sure you want to delete "{{ student.name }}"?</p>
+
+    <!-- Form to confirm deletion -->
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit">Yes, Delete</button>
+    </form>
+
+    <!-- Cancel button: Go back to the list page if user doesn't want to delete -->
+    <form action="{% url 'Lab11_task2' %}" method="get">
+      <button type="submit">Cancel</button> <!-- Go back to the list page if cancel -->
+    </form>
+  </body>
+</html>

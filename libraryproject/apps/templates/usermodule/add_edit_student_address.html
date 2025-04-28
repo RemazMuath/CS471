@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      {% if form.instance.pk %}
+        Edit
+      {% else %}
+        Add
+      {% endif %}Student
+    </title>
+  </head>
+  <body>
+    <h1>
+      {% if form.instance.pk %}
+        Edit
+      {% else %}
+        Add
+      {% endif %}Student
+    </h1>
+
+    <!-- Form for Student details -->
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Save</button>
+    </form>
+
+    <br />
+    <form action="{% url 'Lab11_task2' %}" method="get">
+      <button type="submit">Back to Student List</button>
+    </form>
+  </body>
+</html>
