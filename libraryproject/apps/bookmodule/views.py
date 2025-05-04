@@ -48,7 +48,7 @@ def listing(request):
 
 def tables(request):
     return render(request, 'bookmodule/tables.html')
-
+#lab6
 def search(request):
     if request.method == "POST":
         string = request.POST.get('keyword').lower()
@@ -69,7 +69,7 @@ def search(request):
                 newBooks.append(item)
                 
         return render(request, 'bookmodule/bookList.html', {'books': newBooks})
-    # 
+    
     return render(request, 'bookmodule/search.html')
 
 
@@ -78,7 +78,6 @@ def get_books_list():
     book2 = {'id':56788765,'title':'Reversing: Secrets of Reverse Engineering', 'author':'E. Eilam'}
     book3 = {'id':43211234, 'title':'The Hundred-Page Machine Learning Book', 'author':'Andriy Burkov'}
     return [book1, book2, book3]
-
 
 def simple_query(request):
     mybooks=Book.objects.filter(title__icontains='and') # <- multiple objects

@@ -1,26 +1,24 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Student List</title>
-  </head>
-  <body>
-    <h1>Student List</h1>
-    <a href="{% url 'add_student' %}">Add New Student</a>
-    <ul>
-      {% for student in students %}
-        <li>
-          {{ student.name }} (Age: {{ student.age }}) - {{ student.address.city }}
-          <form action="{% url 'edit_student' student.id %}" method="get" style="display:inline;">
-            <button type="submit">Edit</button>
-          </form>
-          <form action="{% url 'delete_student' student.id %}" method="post" style="display:inline;">
-            {% csrf_token %}
-            <button type="submit">Delete</button>
-          </form>
-        </li>
-      {% empty %}
-        <li>No students available.</li>
-      {% endfor %}
-    </ul>
-  </body>
-</html>
+{% extends 'layouts\base.html' %}
+{% block content %}
+  <!DOCTYPE html>
+
+  <h1>Student List</h1>
+  <a href="{% url 'add_student' %}">Add New Student</a>
+  <ul>
+    {% for student in students %}
+      <li>
+        {{ student.name }} (Age: {{ student.age }}) - {{ student.address.city }}
+        <form action="{% url 'edit_student' student.id %}" method="get" style="display:inline;">
+          <button type="submit">Edit</button>
+        </form>
+        <form action="{% url 'delete_student' student.id %}" method="post" style="display:inline;">
+          {% csrf_token %}
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    {% empty %}
+      <li>No students available.</li>
+    {% endfor %}
+  </ul>
+  
+{% endblock content%}

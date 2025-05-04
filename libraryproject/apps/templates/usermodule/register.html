@@ -1,0 +1,11 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+  <h1>Registration</h1>
+  <form method="POST">
+    {% csrf_token %}
+    <input name="username" placeholder="Username" value="{{ request.POST.username }}" />
+    <input name="password" type="password" placeholder="Password" />
+    <button type="submit">Register</button>
+  </form>
+{% endblock %}

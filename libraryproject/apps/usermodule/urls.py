@@ -16,4 +16,11 @@ urlpatterns = [
     #task3
     path('photo-list/', views.photo_list, name='photo_list'),
     path('upload-photo/', views.upload_photo, name='upload_photo'),
+    #lab12
+    path('register/', views.register, name='register'),
+    path('login/', views.login_view, name='login'),
+    path('logout/', views.logout_view, name='logout'),
+
+
+
 ]
